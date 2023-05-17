@@ -1,0 +1,57 @@
+<header class="banner">
+  <div class="nav">
+    <div class="nav-center">
+      <a class="brand ourlogo" href="/">{{fill website_title}}</a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/members/">Members</a>
+        <a href="/research/">Research</a>
+        <a href="/reports/">Reports</a>
+      </nav>
+    </div>
+  </div>
+
+  {{if hasbanner}}
+  <div class="container">
+    <article>
+      <center>
+        <h1>{{fill author}}</h1>
+        <h2 class="col-8 is-center">{{fill website_descr}}</h2>
+        <a href="/members" class="button outline primary">Members</a>
+        <a href="/research" class="button outline dark">Research</a>
+      </center>
+    </article>
+  </div>
+  {{end}}
+
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+
+      <!-- sidebar content -->
+
+      <div class="sidebar">
+
+        <div class="box hide">
+          <div id="sidebar-content">
+            <h3>{{fill title}}</h3>
+          </div>
+        </div>
+
+
+      {{if hasbanner}}
+      <div class="box">
+        <h3>Latest Publications</h3>
+        {{load_recent_publications}}
+      </div>
+      {{end}}
+        
+      </div>
+
+      <!-- sidebar content (end) -->
+
+    </div>
+
+    <div class="col-8">
