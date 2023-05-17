@@ -54,7 +54,9 @@ He is currently a full-time professor at the research and postgraduate division 
 
 - Email: [alejandro.rm@tlalnepantla.tecnm.mx](mailto:alejandro.rm@tlalnepantla.tecnm.mx)
 
-### M. Sc. Rocío Salinas-Guerra
+## Student Members
+
+### B.S. Rocío Salinas-Guerra
 
 \photo{Rocío Salinas-Guerra}{/assets/rocio-salinas-guerra.jpg}
 
