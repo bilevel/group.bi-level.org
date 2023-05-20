@@ -2,6 +2,7 @@
   scroll-behavior: smooth;
 }
 
+
 .franklin-content{
   background:white;
   padding: 3rem;
@@ -42,6 +43,10 @@
 .banner{
   background:white;
   padding-bottom:2em;
+}
+
+.banner, .franklin-content{
+  box-shadow: 1px 1px 9px 0px rgba(0,0,0,0.1);
 }
 
 .banner article h1 {
