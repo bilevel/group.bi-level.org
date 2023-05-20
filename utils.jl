@@ -1,5 +1,8 @@
 import Bibliography: bibtex_to_web
 using Unicode
+using StringDistances
+using DelimitedFiles
+using UnPack
 
 tex2unicode_replacements = (
     "---" => "—", # em dash needs to go first
@@ -141,5 +144,89 @@ function lx_fillresearch(com, _)
   end
 
   String(take!(io))
+end
+
+function lx_collaborators(com, _)
+  bibs = _get_bib_files()
+  isnothing(bibs) && return
+
+  # collaborators' names
+  _n = [n => i for (i, b) in enumerate(bibs) for n in split(tex2unicode(b.names), ", ")] 
+  names_dict = Dict(_n...)
+
+  _names = first.(_n) |> unique!
+
+  # string distance
+  ds = pairwise(Levenshtein(), _names)
+
+  # remove active members
+
+  # remove duplicated names
+  next = ones(Bool, length(_names))
+  k = 5
+  for i in 1:length(_names)
+    !next[i] && continue
+    idx = findall(ds[i, i+1:end] .< k)
+    isempty(idx) && continue
+    next[idx .+ i] .= false
+    # remove active members
+  end
+
+  _M, _ = readdlm("members/members.csv", ',', header=true);
+  members = _M[:,3]
+
+  # output markdown
+  io = IOBuffer()
+  for _name in _names[next]
+    # remove active members
+    if minimum(pairwise(Levenshtein(),[_name], members)) < 3+ k
+      continue
+    end
+    write(io, "- $_name ")
+    try
+      l = bibs[names_dict[_name]].link
+      write(io, "[[see collaboration]($l)]")
+    catch
+    end
+    write(io, "\n")
+  end
+
+  String(take!(io))
+end
+
+_row_to_dict(row, h) = Dict(Symbol(a) => b for (a, b) in zip(h, row))
+
+function _print_person(io, M, h)
+  for i in 1:size(M, 1)
+    @unpack type,name,email,url,photo,bio = _row_to_dict(M[i,:], h)
+    println(io, "### ", name)
+    println(io, "\\photo{", name, "}{", photo,"}")
+    println(io, bio)
+    println(io, "~~~")
+    println(io, "<span class=\"clearfix\"></span>")
+    println(io, "~~~")
+    !isempty(email) && println(io, "\n**Email:** [$email](mailto:$email)")
+    if !isempty(url)
+      _url = replace(url, "http://"=>"", "https://" =>"")
+      println(io, " / **URL:** [$_url](", url, ")")
+    end
+    println(io, "\n\n***\n\n")
+  end
+end
+
+function lx_members(com,_)
+  M_all, h = readdlm("members/members.csv", ',', header=true);
+
+  io = IOBuffer()
+  println(io, "## Active Members")
+  M = M_all[M_all[:,2] .== "member",:]
+  _print_person(io, M, h)
+
+  println(io, "## Student Members")
+  M = M_all[M_all[:,2] .== "student",:]
+  _print_person(io, M, h)
+
+  return String(take!(io))
+
 end
 
