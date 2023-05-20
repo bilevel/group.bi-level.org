@@ -2,32 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/activities/index.html</loc>
-    <lastmod>2023-05-17</lastmod>
+    <loc>https://group.bi-level.org/activities/index.html</loc>
+    <lastmod>2023-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/members/index.html</loc>
-    <lastmod>2023-05-17</lastmod>
+    <loc>https://group.bi-level.org/members/index.html</loc>
+    <lastmod>2023-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/reports/index.html</loc>
-    <lastmod>2023-05-17</lastmod>
+    <loc>https://group.bi-level.org/contact/index.html</loc>
+    <lastmod>2023-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/index.html</loc>
-    <lastmod>2023-05-17</lastmod>
+    <loc>https://group.bi-level.org/reports/index.html</loc>
+    <lastmod>2023-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/research/index.html</loc>
-    <lastmod>2023-05-17</lastmod>
+    <loc>https://group.bi-level.org/index.html</loc>
+    <lastmod>2023-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://group.bi-level.org/research/index.html</loc>
+    <lastmod>2023-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
