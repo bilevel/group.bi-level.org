@@ -9,13 +9,13 @@ mintoclevel = 2
 # these files might be copied and, if markdown, processed by Franklin which
 # you might not want. Indicate directories by ending the name with a `/`.
 # Base files such as LICENSE.md and README.md are ignored by default.
-ignore = ["node_modules/"]
+ignore = ["node_modules/", "Project.toml", "Manifest.toml", "bib/", "members/members.csv"]
 
 # RSS (the website_{title, descr, url} must be defined to get RSS)
 generate_rss = true
 website_title = "BORG"
 website_descr = "We are a team of researchers focused on advancing the field of bilevel optimization."
-website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
+website_url   = "https://group.bi-level.org/"
 hasbanner = false
 website_mantainer = "Jesús-Adolfo Mejía-de-Dios"
 +++
@@ -28,6 +28,6 @@ Add here global latex commands to use throughout your pages.
 
 \newcommand{\photo}[2]{
 ~~~
-<img src="!#2" alt="#1" style="float:left;max-width:300px;padding:1.5em;" alt="#1"/>
+<img src="!#2" alt="Photo of #1" style="max-width:300px;padding:1.5em;"  align="left"/>
 ~~~
 }

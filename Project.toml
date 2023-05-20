@@ -1,5 +1,8 @@
 [deps]
 Bibliography = "f1be7e48-bf82-45af-a471-ae754a193061"
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
 Franklin = "713c75ef-9fc9-4b05-94a9-213340da978e"
 NodeJS = "2bd173c7-0d6d-553b-b6af-13a54713934c"
+StringDistances = "88034a9c-02f8-509d-84a9-84ec65e18404"
+UnPack = "3a884ed6-31ef-47d7-9d2a-63182c4928ed"
 Unicode = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"

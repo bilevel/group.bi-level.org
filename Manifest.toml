@@ -2,7 +2,7 @@
 
 julia_version = "1.9.0"
 manifest_format = "2.0"
-project_hash = "eb6fbfa03a8fd8ab54c2f478bf457be7f5ca5b90"
+project_hash = "9036bf529b6acdb43622b84005b6a856d5c9d290"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -47,13 +47,15 @@ deps = ["UUIDs"]
 git-tree-sha1 = "7a60c856b9fa189eb34f5f8a6f6b5529b7942957"
 uuid = "34da2185-b29b-5c13-b0c7-acf172513d20"
 version = "4.6.1"
+weakdeps = ["Dates", "LinearAlgebra"]
 
     [deps.Compat.extensions]
     CompatLinearAlgebraExt = "LinearAlgebra"
 
-    [deps.Compat.weakdeps]
-    Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
-    LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+[[deps.CompilerSupportLibraries_jll]]
+deps = ["Artifacts", "Libdl"]
+uuid = "e66e0078-7015-5450-92f7-15fbd957f2ae"
+version = "1.0.2+0"
 
 [[deps.ConcurrentUtilities]]
 deps = ["Serialization", "Sockets"]
@@ -76,6 +78,12 @@ deps = ["Mmap"]
 git-tree-sha1 = "9e2f36d3c96a820c678f2f1f1782582fcf685bae"
 uuid = "8bb1440f-4735-579b-a4ab-409b98df4dab"
 version = "1.9.1"
+
+[[deps.Distances]]
+deps = ["LinearAlgebra", "SparseArrays", "Statistics", "StatsAPI"]
+git-tree-sha1 = "49eba9ad9f7ead780bfb7ee319f962c811c6d3b2"
+uuid = "b4f34e82-e78d-54a5-968a-f98e89d6e8f7"
+version = "0.10.8"
 
 [[deps.DocStringExtensions]]
 deps = ["LibGit2"]
@@ -176,6 +184,10 @@ git-tree-sha1 = "c7cb1f5d892775ba13767a87c7ada0b980ea0a71"
 uuid = "94ce4f54-9a6c-5748-9c1c-f9c7231a4531"
 version = "1.16.1+2"
 
+[[deps.LinearAlgebra]]
+deps = ["Libdl", "OpenBLAS_jll", "libblastrampoline_jll"]
+uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+
 [[deps.Literate]]
 deps = ["Base64", "IOCapture", "JSON", "REPL"]
 git-tree-sha1 = "1c4418beaa6664041e0f9b48f0710f57bff2fcbe"
@@ -233,6 +245,11 @@ deps = ["Pkg"]
 git-tree-sha1 = "905224bbdd4b555c69bb964514cfa387616f0d3a"
 uuid = "2bd173c7-0d6d-553b-b6af-13a54713934c"
 version = "1.3.0"
+
+[[deps.OpenBLAS_jll]]
+deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
+uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
+version = "0.3.21+4"
 
 [[deps.OpenSSL]]
 deps = ["BitFlags", "Dates", "MozillaCACerts_jll", "OpenSSL_jll", "Sockets"]
@@ -307,11 +324,37 @@ version = "1.1.0"
 [[deps.Sockets]]
 uuid = "6462fe0b-24de-5631-8697-dd941f90decc"
 
+[[deps.SparseArrays]]
+deps = ["Libdl", "LinearAlgebra", "Random", "Serialization", "SuiteSparse_jll"]
+uuid = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+
+[[deps.Statistics]]
+deps = ["LinearAlgebra", "SparseArrays"]
+uuid = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+version = "1.9.0"
+
+[[deps.StatsAPI]]
+deps = ["LinearAlgebra"]
+git-tree-sha1 = "45a7769a04a3cf80da1c1c7c60caf932e6f4c9f7"
+uuid = "82ae8749-77ed-4fe6-ae5f-f523153014b0"
+version = "1.6.0"
+
+[[deps.StringDistances]]
+deps = ["Distances", "StatsAPI"]
+git-tree-sha1 = "ceeef74797d961aee825aabf71446d6aba898acb"
+uuid = "88034a9c-02f8-509d-84a9-84ec65e18404"
+version = "0.11.2"
+
 [[deps.StringEncodings]]
 deps = ["Libiconv_jll"]
 git-tree-sha1 = "33c0da881af3248dafefb939a21694b97cfece76"
 uuid = "69024149-9ee7-55f6-a4c4-859efe599b68"
 version = "0.3.6"
+
+[[deps.SuiteSparse_jll]]
+deps = ["Artifacts", "Libdl", "Pkg", "libblastrampoline_jll"]
+uuid = "bea87d4a-7f5b-5778-9afe-8cc45184846c"
+version = "5.10.1+6"
 
 [[deps.TOML]]
 deps = ["Dates"]
@@ -342,6 +385,11 @@ version = "1.4.2"
 deps = ["Random", "SHA"]
 uuid = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
 
+[[deps.UnPack]]
+git-tree-sha1 = "387c1f73762231e86e0c9c5443ce3b4a0a9a0c2b"
+uuid = "3a884ed6-31ef-47d7-9d2a-63182c4928ed"
+version = "1.0.2"
+
 [[deps.Unicode]]
 uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 
@@ -355,6 +403,11 @@ version = "0.4.8"
 deps = ["Libdl"]
 uuid = "83775a58-1f1d-513f-b197-d71354ab007a"
 version = "1.2.13+0"
+
+[[deps.libblastrampoline_jll]]
+deps = ["Artifacts", "Libdl"]
+uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
+version = "5.7.0+0"
 
 [[deps.nghttp2_jll]]
 deps = ["Artifacts", "Libdl"]

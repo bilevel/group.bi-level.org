@@ -1,6 +1,7 @@
-@def title = "Bilevel Optimization Research Group"
+@def title = "Home"
 @def tags = ["group", "bilevel optimization", "Mexico"]
 @def hasbanner = true
+
 
 # Bilevel Optimization Research Group
 
