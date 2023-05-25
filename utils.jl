@@ -177,7 +177,7 @@ function lx_collaborators(com, _)
 
   # output markdown
   io = IOBuffer()
-  for _name in _names[next]
+  for _name in sort(_names[next])
     # remove active members
     if minimum(pairwise(Levenshtein(),[_name], members)) < 3+ k
       continue
